@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For Sophia 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 15%,#63304e,transparent 40%),radial-gradient(circle at 85% 85%,#572644,transparent 40%),#180e19;color:#fff1f7;font-family:Georgia,serif;overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}.heart{position:absolute;bottom:-40px;opacity:0;animation:up linear infinite;color:#f3a5c5}
+@keyframes up{15%,85%{opacity:.5}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 16px;position:relative}.box{width:min(740px,100%);text-align:center}.eyebrow{font:11px Arial;letter-spacing:.25em;text-transform:uppercase;color:#f2a5c4}
+h1{font-size:clamp(2.8rem,9vw,5rem);font-weight:normal;line-height:1.1}h1 em{color:#f2a5c4}.lead{font:15px/1.8 Arial;color:#d7bdca}
+button{border:1px solid #f4b5cf;border-radius:40px;padding:14px 24px;background:linear-gradient(135deg,#f0a3c2,#c75d8c);color:#29111f;font-weight:bold;cursor:pointer;min-height:46px}
+#letter,#question{display:none}.heading{margin-bottom:22px}.heading h2{font-weight:normal;font-size:clamp(2rem,7vw,3rem);color:#f5b6d0;margin:10px}.heading p{font:11px Arial;letter-spacing:.2em;color:#c99caf}
+.paper,.ask{background:linear-gradient(145deg,#382332f5,#241723f5);border:1px solid #e9a6c244;border-radius:20px;padding:clamp(24px,6vw,48px);text-align:left;box-shadow:0 22px 70px #0005}
+.paper p{font-size:clamp(1rem,2.5vw,1.1rem);line-height:1.9;color:#f0dfe7;margin:0 0 18px}.paper .dear,.sign{color:#f5b5d0}.paper strong{color:#ffc3db;font-weight:normal}
+.continue{text-align:center;margin-top:24px}.ask{text-align:center}.ask h2{font-size:clamp(2rem,7vw,3.4rem);line-height:1.2;font-weight:normal;color:#f7c1d7}.ask p{font:14px/1.8 Arial;color:#d7bdca}.answers{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.answers button{min-width:120px}#no{background:#3a2936;color:#f7dce8;border-color:#8c657b}#reply{min-height:30px;color:#ffc3db;margin-top:20px}.foot{font:10px Arial;letter-spacing:.15em;color:#ad8a9d;text-align:center;margin-top:25px}
+@media(prefers-reduced-motion:reduce){.heart{animation:none;display:none}}
+</style></head><body><div id="hearts"></div>
+<section id="start"><div class="box"><div class="eyebrow">A little something from my heart</div><h1>For you,<br><em>Sophia</em> 💗</h1><p class="lead">I have a few words I've been wanting to share with you.<br>Take a moment and open this little surprise. 💌</p><button id="open">Open My Letter 💌</button></div></section>
+<section id="letter"><div class="box"><div class="heading">🌷 💗 🌷<h2>A letter for Sophia</h2><p>WORDS I WANTED YOU TO KNOW</p></div><article class="paper">
+<p class="dear">My dear Sophia, 💕</p>
+<p>I wanted to take a moment to tell you something that I hope will bring a smile to your face. Sometimes, you meet someone whose presence brings a special kind of warmth into your life, and even without trying, they become someone you genuinely look forward to talking to. I feel that way about you.</p>
+<p>I want you to know that I truly appreciate you. There's something lovely about your personality, and I would honestly love the chance for us to build a friendship that is strong, genuine and full of beautiful memories.</p>
+<p>I'm not writing this to put any pressure on you. What I wish for is something meaningful: <strong>a close connection where we can laugh freely, share our thoughts, encourage each other, check up on one another and always feel comfortable being ourselves.</strong></p>
+<p>I would love for us to become best of friends — the kind who can talk about almost anything, celebrate each other's wins, support each other through difficult days and create little memories that we'll smile about later. I want any bond between us to be built on honesty, trust, respect and genuine care.</p>
+<p>You don't have to be anything other than yourself around me. I simply hope we can get closer with time and allow something beautiful to grow naturally. No pressure, no expectations — just two people choosing to value and appreciate one another.</p>
+<p>Sophia, you are special, and I'm glad to know you. I hope this letter reminds you that you are appreciated more than you might realise. 💗</p>
+<p class="sign">With warmth and genuine affection,<br>Awesome D. 🌹</p></article><div class="continue"><button id="next">There's one more thing… 💗</button></div></div></section>
+<section id="question"><div class="box"><div class="heading">💞 🌹 💞<p>A LITTLE QUESTION FOR YOU</p></div><div class="ask"><div style="font-size:42px">💗</div><h2>Would you do me the honour of being mi princess?</h2><p>No matter your answer, I hope you know that I appreciate you. I just wanted to ask you in a special way. 🥹</p><div class="answers"><button id="yes">Yes 💖</button><button id="no">No 🙈</button></div><div id="reply" aria-live="polite"></div></div><div class="foot">WITH LOVE · AWESOME D</div></div></section>
+<script>
+const layer=document.getElementById('hearts');['💗','💕','💖','💞','❤️','💘','🌸','💓','💝'].concat(['💗','💕','💖','💞','❤️','💘','🌸','💓','💝']).forEach((s,i)=>{let e=document.createElement('span');e.className='heart';e.textContent=s;e.style.left=Math.random()*96+'%';e.style.animationDelay=Math.random()*9+'s';e.style.animationDuration=9+Math.random()*9+'s';e.style.fontSize=16+Math.random()*16+'px';layer.append(e)});
+function reveal(a,b){document.getElementById(a).style.display='none';document.getElementById(b).style.display='flex';window.scrollTo({top:0,behavior:'smooth'})}
+document.getElementById('open').onclick=()=>reveal('start','letter');document.getElementById('next').onclick=()=>reveal('letter','question');
+const no=document.getElementById('no');no.onclick=()=>document.getElementById('reply').textContent='Hehe 🙈 That button is feeling a little shy. You can still choose what feels right to you. 💗';
+no.onpointerenter=()=>{let x=(Math.random()-.5)*140,y=(Math.random()-.5)*70;no.style.transform=`translate(${x}px,${y}px)`};no.onpointerleave=()=>no.style.transform='';
+document.getElementById('yes').onclick=()=>{document.getElementById('reply').textContent='You just made me smile, mi Princess! 💖🥹';document.querySelector('.answers').style.display='none'};
+</script></body></html>
